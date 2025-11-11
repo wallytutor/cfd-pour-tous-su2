@@ -1,0 +1,18 @@
+# Editor stuff:
+.vscode/
+
+# Notebooks checkpoints:
+.ipynb_checkpoints/
+
+# Any log files:
+*.log
+log.*
+
+# Generated LaTeX
+*.aux
+*.nav
+*.out
+*.snm
+*.toc
+_*.tex
+_*.pdf
