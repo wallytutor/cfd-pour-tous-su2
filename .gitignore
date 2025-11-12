@@ -16,3 +16,6 @@ log.*
 *.toc
 _*.tex
 _*.pdf
+
+# Any sandbox
+*sandbox*

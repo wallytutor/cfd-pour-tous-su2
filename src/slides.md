@@ -230,6 +230,24 @@ new_slide("intro_resources", title=title, contents=contents)
 ## Premiers pas
 
 ```python
+slides.add_section("Premiers pas avec SU2")
+```
+
+```python
+title = "Le premier tutoriel"
+
+with ml.Itemize(itemsep="3pt") as item:
+    item.add("...")
+    contents = item.collect()
+    
+new_slide("sec1_intro", title=title, contents=contents)
+```
+
+```python
+
+```
+
+```python
 
 ```
 
