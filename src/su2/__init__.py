@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+SU2_VERSION = "8.3.0"
+
 __all__ = []
 
 # +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
@@ -8,12 +10,26 @@ __all__ = []
 
 from .enums import (
     SolverType,
+    InletType,
+    ConvectiveScheme,
+    LinearSolver,
+    Preconditioner,
     MathProblem,
+    NumMethodGrad,
+    MgCycle,
+    TimeDiscretization
 )
 
 __all__ += [
     "SolverType",
+    "InletType",
+    "ConvectiveScheme",
+    "LinearSolver",
+    "Preconditioner",
     "MathProblem",
+    "NumMethodGrad",
+    "MgCycle",
+    "TimeDiscretization"
 ]
 
 # +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+

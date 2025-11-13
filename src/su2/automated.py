@@ -71,28 +71,6 @@ class ConductivityModel(Enum):
     FLAMELET = "FLAMELET"
 
 
-class ConvectiveScheme(Enum):
-    """Convective numerical scheme"""
-    JST = "JST"
-    JST_KE = "JST_KE"
-    JST_MAT = "JST_MAT"
-    LAX_FRIEDRICH = "LAX-FRIEDRICH"
-    ROE = "ROE"
-    AUSM = "AUSM"
-    AUSMPLUSUP = "AUSMPLUSUP"
-    AUSMPLUSUP2 = "AUSMPLUSUP2"
-    AUSMPLUSM = "AUSMPLUSM"
-    HLLC = "HLLC"
-    TURKEL_PREC = "TURKEL_PREC"
-    SW = "SW"
-    MSW = "MSW"
-    FDS = "FDS"
-    SLAU = "SLAU"
-    SLAU2 = "SLAU2"
-    L2ROE = "L2ROE"
-    LMROE = "LMROE"
-
-
 class SlopeLimiter(Enum):
     """Slope limiter options"""
     NONE = "NONE"
@@ -103,30 +81,6 @@ class SlopeLimiter(Enum):
     NISHIKAWA_R3 = "NISHIKAWA_R3"
     NISHIKAWA_R4 = "NISHIKAWA_R4"
     NISHIKAWA_R5 = "NISHIKAWA_R5"
-
-
-class TimeDiscretization(Enum):
-    """Time discretization scheme"""
-    RUNGE_KUTTA_EXPLICIT = "RUNGE-KUTTA_EXPLICIT"
-    EULER_IMPLICIT = "EULER_IMPLICIT"
-    EULER_EXPLICIT = "EULER_EXPLICIT"
-
-
-class LinearSolver(Enum):
-    """Linear solver options"""
-    BCGSTAB = "BCGSTAB"
-    FGMRES = "FGMRES"
-    RESTARTED_FGMRES = "RESTARTED_FGMRES"
-    CONJUGATE_GRADIENT = "CONJUGATE_GRADIENT"
-    SMOOTHER = "SMOOTHER"
-
-
-class Preconditioner(Enum):
-    """Preconditioner options"""
-    ILU = "ILU"
-    LU_SGS = "LU_SGS"
-    LINELET = "LINELET"
-    JACOBI = "JACOBI"
 
 
 class OutputFormat(Enum):

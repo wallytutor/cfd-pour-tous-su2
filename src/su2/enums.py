@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
 from enum import Enum
 
+# +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+# https://su2code.github.io/docs_v7/Solver-Setup/
+# +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 
 class SolverType(Enum):
-    """ Solver type options.
-
-    Documented at:
-    https://su2code.github.io/docs_v7/Solver-Setup/#defining-the-problem
-    """
+    """ Solver type options. """
     EULER              = "EULER"
     NAVIER_STOKES      = "NAVIER_STOKES"
     RANS               = "RANS"
@@ -23,11 +22,116 @@ class SolverType(Enum):
     HEAT_EQUATION_FVM  = "HEAT_EQUATION_FVM"
     ELASTICITY         = "ELASTICITY"
 
+# +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+# https://su2code.github.io/docs_v7/Markers-and-BC/
+# +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+class InletType(Enum):
+    """ Inlet boundary condition types. """
+    TOTAL_CONDITIONS = "TOTAL_CONDITIONS"
+    MASS_FLOW        = "MASS_FLOW"
+    VELOCITY_INLET   = "VELOCITY_INLET"
+    PRESSURE_INLET   = "PRESSURE_INLET"
+
+    def validate_solver(self, solver_type: SolverType) -> bool:
+        """ Validate if the inlet type is compatible with the solver type. """
+        match self:
+
+            case InletType.TOTAL_CONDITIONS | InletType.MASS_FLOW:
+                return solver_type in {
+                    SolverType.EULER,
+                    SolverType.NAVIER_STOKES,
+                    SolverType.RANS,
+                    SolverType.FEM_EULER,
+                    SolverType.FEM_NAVIER_STOKES,
+                }
+
+            case InletType.VELOCITY_INLET | InletType.PRESSURE_INLET:
+                return solver_type in {
+                    SolverType.INC_EULER,
+                    SolverType.INC_NAVIER_STOKES,
+                    SolverType.INC_RANS
+                }
+
+# +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+# https://su2code.github.io/docs_v7/Convective-Schemes/
+# +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+class ConvectiveScheme(Enum):
+    """ Convective numerical scheme. """
+    JST           = "JST"
+    JST_KE        = "JST_KE"
+    JST_MAT       = "JST_MAT"
+    LAX_FRIEDRICH = "LAX-FRIEDRICH"
+    ROE           = "ROE"
+    AUSM          = "AUSM"
+    AUSMPLUSUP    = "AUSMPLUSUP"
+    AUSMPLUSUP2   = "AUSMPLUSUP2"
+    AUSMPLUSM     = "AUSMPLUSM"
+    HLLC          = "HLLC"
+    TURKEL_PREC   = "TURKEL_PREC"
+    SW            = "SW"
+    MSW           = "MSW"
+    FDS           = "FDS"
+    SLAU          = "SLAU"
+    SLAU2         = "SLAU2"
+    L2ROE         = "L2ROE"
+    LMROE         = "LMROE"
+
+    def validate_solver(self, solver_type: SolverType) -> bool:
+        """ Validate if the convective scheme is compatible with the solver type. """
+        raise NotImplementedError("Validation not implemented yet.")
+
+# +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+# https://su2code.github.io/docs_v7/Linear-Solvers-and-Preconditioners
+# +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+class LinearSolver(Enum):
+    """ Linear solver options. """
+    FGMRES             = "FGMRES"
+    RESTARTED_FGMRES   = "RESTARTED_FGMRES"
+    BCGSTAB            = "BCGSTAB"
+    CONJUGATE_GRADIENT = "CONJUGATE_GRADIENT"
+    SMOOTHER           = "SMOOTHER"
+
+
+class Preconditioner(Enum):
+    """ Preconditioner options. """
+    JACOBI  = "JACOBI"
+    LU_SGS  = "LU_SGS"
+    ILU     = "ILU"
+    LINELET = "LINELET"
+
+# +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+# TBD : not found in the documentation
+# +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 
 class MathProblem(Enum):
-    """ Mathematical problem types.
-
-    """
+    """ Mathematical problem types. """
     DIRECT             = "DIRECT"
     CONTINUOUS_ADJOINT = "CONTINUOUS_ADJOINT"
     DISCRETE_ADJOINT   = "DISCRETE_ADJOINT"
+
+
+class NumMethodGrad(Enum):
+    """ Numerical method for gradient computation. """
+    GREEN_GAUSS            = "GREEN_GAUSS"
+    WEIGHTED_LEAST_SQUARES = "WEIGHTED_LEAST_SQUARES"
+
+
+class MgCycle(Enum):
+    """ Multigrid cycle types. """
+    V_CYCLE      = "V_CYCLE"
+    W_CYCLE      = "W_CYCLE"
+    FULLMG_CYCLE = "FULLMG_CYCLE"
+
+
+class TimeDiscretization(Enum):
+    """ Time discretization scheme. """
+    RUNGE_KUTTA_EXPLICIT = "RUNGE-KUTTA_EXPLICIT"
+    EULER_IMPLICIT       = "EULER_IMPLICIT"
+    EULER_EXPLICIT       = "EULER_EXPLICIT"
+
+# +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+# EOF
+# +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
