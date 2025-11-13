@@ -114,6 +114,11 @@ links = (f"{ml.url_link(url=url, text=name)} - {text}" for name, text, url in [
         "le principal outil de visualisation de résults et post-traitement",
         "https://www.paraview.org/"
     ),
+    (
+        "VS Code",
+        "l'éditeur de code conseillé pour éditer les fichiers des modèles",
+        "https://code.visualstudio.com/download"
+    ),
 ])
 
 with ml.Itemize(itemsep="3pt") as item:
@@ -237,14 +242,14 @@ slides.add_section("Premiers pas avec SU2")
 title = "Le premier tutoriel"
 
 with ml.Itemize(itemsep="3pt") as item:
-    item.add("...")
+    item.intro("Un cas de simulation avec SU2 est composé des éléments suivants :")
+    item.add("Un fichier \\emph{.cfg} avec les directives de mise-au-point du modèle")
+    item.add("Un fichier \\emph{.su2}/\\emph{.cgns} avec le maillage non-structuré du domaine")
+    item.add("L'appel au pré-processeur ou directe du solveur \\emph{SU2\\_CFD}")
+    item.add("Les étapes de post-process de la solution et analyse des résidus")
     contents = item.collect()
     
 new_slide("sec1_intro", title=title, contents=contents)
-```
-
-```python
-
 ```
 
 ```python
