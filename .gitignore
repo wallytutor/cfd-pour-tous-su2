@@ -1,6 +1,10 @@
 # Editor stuff:
 .vscode/
 
+# Python cache files:
+__pycache__/
+*.pyc
+
 # Notebooks checkpoints:
 .ipynb_checkpoints/
 
@@ -19,3 +23,8 @@ _*.pdf
 
 # Any sandbox
 *sandbox*
+
+# SU2 results
+*.vtu
+*.dat
+*.csv
