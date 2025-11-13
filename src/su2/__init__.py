@@ -10,6 +10,9 @@ __all__ = []
 
 from .enums import (
     SolverType,
+    TurbulenceModel,
+    ShearStressTransportModel,
+    SpalartAllmarasModel,
     InletType,
     ConvectiveScheme,
     LinearSolver,
@@ -17,11 +20,14 @@ from .enums import (
     MathProblem,
     NumMethodGrad,
     MgCycle,
-    TimeDiscretization
+    TimeDiscretization,
 )
 
 __all__ += [
     "SolverType",
+    "TurbulenceModel",
+    "ShearStressTransportModel",
+    "SpalartAllmarasModel",
     "InletType",
     "ConvectiveScheme",
     "LinearSolver",
@@ -29,7 +35,19 @@ __all__ += [
     "MathProblem",
     "NumMethodGrad",
     "MgCycle",
-    "TimeDiscretization"
+    "TimeDiscretization",
+]
+
+# +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+# groups
+# +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+from .groups import (
+    ProblemDefinition,
+)
+
+__all__ += [
+    "ProblemDefinition",
 ]
 
 # +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+

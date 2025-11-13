@@ -23,6 +23,42 @@ class SolverType(Enum):
     ELASTICITY         = "ELASTICITY"
 
 # +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+# https://su2code.github.io/docs_v7/Physical-Definition/
+# +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+class TurbulenceModel(Enum):
+    """ Turbulence model options. """
+    NONE = "NONE"
+    SA   = "SA"
+    SST  = "SST"
+
+
+class ShearStressTransportModel(Enum):
+    """ Shear Stress Transport (SST) turbulence model versions/corrections. """
+    NONE                   = "NONE"
+    V2003m                 = "V2003m"
+    V1994m                 = "V1994m"
+    VORTICITY              = "VORTICITY"
+    KATO_LAUNDER           = "KATO_LAUNDER"
+    UQ                     = "UQ"
+    SUSTAINING             = "SUSTAINING"
+    COMPRESSIBILITY_WILCOX = "COMPRESSIBILITY-WILCOX"
+    COMPRESSIBILITY_SARKAR = "COMPRESSIBILITY-SARKAR"
+    DIMENSIONLESS_LIMIT    = "DIMENSIONLESS_LIMIT"
+
+
+class SpalartAllmarasModel(Enum):
+    """ Spalart-Allmaras (SA) turbulence model versions/corrections. """
+    NONE            = "NONE"
+    NEGATIVE        = "NEGATIVE"
+    EDWARDS         = "EDWARDS"
+    BCM             = "BCM"
+    WITHFT2         = "WITHFT2"
+    QCR2000         = "QCR2000"
+    COMPRESSIBILITY = "COMPRESSIBILITY"
+    ROTATION        = "ROTATION"
+
+# +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 # https://su2code.github.io/docs_v7/Markers-and-BC/
 # +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 
