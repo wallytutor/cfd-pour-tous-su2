@@ -207,8 +207,8 @@ class SgsModel(Enum):
     VREMAN        = "VREMAN"
 
 
-class SolutionVerification(Enum):
-    """ Verification solution types. """
+class Verification(Enum):
+    """ Solution verification types. """
     NO_VERIFICATION_SOLUTION = "NO_VERIFICATION_SOLUTION"
     INVISCID_VORTEX          = "INVISCID_VORTEX"
     RINGLEB                  = "RINGLEB"

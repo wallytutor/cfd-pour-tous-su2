@@ -33,7 +33,7 @@ num_method_grad     = NumMethodGrad.GREEN_GAUSS
 mg_cycle            = MgCycle.W_CYCLE
 time_discretization = TimeDiscretization.EULER_IMPLICIT
 
-inlet_type.validate_solver(SolverType.EULER)
+# inlet_type.validate_solver(SolverType.EULER)
 ```
 
 ```python

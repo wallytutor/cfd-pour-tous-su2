@@ -25,7 +25,7 @@ from .enums import (
     MgCycle,
     TimeDiscretization,
     SgsModel,
-    SolutionVerification,
+    Verification,
     UnitSystem,
 )
 
@@ -46,7 +46,7 @@ __all__ += [
     "MgCycle",
     "TimeDiscretization",
     "SgsModel",
-    "SolutionVerification",
+    "Verification",
     "UnitSystem",
 ]
 

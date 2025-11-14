@@ -9,7 +9,7 @@ from .enums import (
     TransitionModel,
     LmTransitionModelOptions,
     SgsModel,
-    SolutionVerification,
+    Verification,
     MathProblem,
     UnitSystem,
 )
@@ -36,7 +36,7 @@ class ProblemDefinition:
         LM model versions/corrections.
     sgs_model : SgsModel
         Subgrid scale model.
-    solution_verification : SolutionVerification
+    solution_verification : Verification
         Verification solution type.
     math_problem : MathProblem
         Mathematical problem type.
@@ -63,7 +63,7 @@ class ProblemDefinition:
     hroughness: float                      = 1.0e-6
     lm_options: LmTransitionModelOptions   = LmTransitionModelOptions.NONE
     sgs_model: SgsModel                    = SgsModel.NONE
-    solution_verification: SolutionVerification = SolutionVerification.NO_VERIFICATION_SOLUTION
+    solution_verification: Verification    = Verification.NO_VERIFICATION_SOLUTION
     math_problem: MathProblem              = MathProblem.NONE
     axisymmetric: YesNoEnum                = YesNoEnum.NO
     gravity_force: YesNoEnum               = YesNoEnum.NO
@@ -123,7 +123,7 @@ class ProblemDefinition:
         if self.sgs_model != SgsModel.NONE:
             cfg.append(f"KIND_SGS_MODEL= {self.sgs_model.value}")
 
-        if self.solution_verification != SolutionVerification.NO_VERIFICATION_SOLUTION:
+        if self.solution_verification != Verification.NO_VERIFICATION_SOLUTION:
             cfg.append(f"KIND_VERIFICATION_SOLUTION= {self.solution_verification.value}")
 
         if self.math_problem != MathProblem.NONE:
