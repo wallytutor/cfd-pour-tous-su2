@@ -9,6 +9,7 @@ __all__ = []
 # +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 
 from .enums import (
+    YesNoEnum,
     SolverType,
     TurbulenceModel,
     ShearStressTransportModel,
@@ -29,6 +30,7 @@ from .enums import (
 )
 
 __all__ += [
+    "YesNoEnum",
     "SolverType",
     "TurbulenceModel",
     "ShearStressTransportModel",

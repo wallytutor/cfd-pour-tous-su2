@@ -2,6 +2,15 @@
 from enum import Enum
 
 # +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+# Helpers
+# +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+class YesNoEnum(Enum):
+    """ Yes/No options. """
+    YES = "YES"
+    NO  = "NO"
+
+# +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 # https://su2code.github.io/docs_v7/Solver-Setup/
 # +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 
@@ -163,6 +172,7 @@ class Preconditioner(Enum):
 
 class MathProblem(Enum):
     """ Mathematical problem types. """
+    NONE               = "NONE"
     DIRECT             = "DIRECT"
     CONTINUOUS_ADJOINT = "CONTINUOUS_ADJOINT"
     DISCRETE_ADJOINT   = "DISCRETE_ADJOINT"
@@ -219,6 +229,8 @@ class UnitSystem(Enum):
 
     Attributes
     ----------
+    NONE : str
+        No specific system of units (use default SU2 units).
     SI : str
         International system of units (SI): (meters, kilograms, Kelvins,
         Newtons = kg m/s^2, Pascals = N/m^2, Density = kg/m^3,
@@ -228,8 +240,9 @@ class UnitSystem(Enum):
         lbf = slug ft/s^2, psf = lbf/ft^2, Density = slug/ft^3,
         Speed = ft/s, Equiv. Area = ft^2)
     """
-    SI = "SI"
-    US = "US"
+    NONE = "NONE"
+    SI   = "SI"
+    US   = "US"
 
 # +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 # EOF
