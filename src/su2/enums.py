@@ -58,6 +58,25 @@ class SpalartAllmarasModel(Enum):
     COMPRESSIBILITY = "COMPRESSIBILITY"
     ROTATION        = "ROTATION"
 
+
+class TransitionModel(Enum):
+    """ Transition model options. """
+    NONE = "NONE"
+    LM   = "LM"
+
+
+class LmTransitionModelOptions(Enum):
+    """ Transition model versions/corrections. """
+    NONE           = "NONE"
+    LM2015         = "LM2015"
+    MALAN          = "MALAN"
+    SULUKSNA       = "SULUKSNA"
+    KRAUSE         = "KRAUSE"
+    KRAUSE_HYPER   = "KRAUSE_HYPER"
+    MEDIDA         = "MEDIDA"
+    MEDIDA_BAEDER  = "MEDIDA_BAEDER"
+    MENTER_LANGTRY = "MENTER_LANGTRY"
+
 # +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 # https://su2code.github.io/docs_v7/Markers-and-BC/
 # +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
@@ -167,6 +186,50 @@ class TimeDiscretization(Enum):
     RUNGE_KUTTA_EXPLICIT = "RUNGE-KUTTA_EXPLICIT"
     EULER_IMPLICIT       = "EULER_IMPLICIT"
     EULER_EXPLICIT       = "EULER_EXPLICIT"
+
+
+class SgsModel(Enum):
+    """ Subgrid scale model options. """
+    NONE          = "NONE"
+    IMPLICIT_LES  = "IMPLICIT_LES"
+    SMAGORINSKY   = "SMAGORINSKY"
+    WALE          = "WALE"
+    VREMAN        = "VREMAN"
+
+
+class SolutionVerification(Enum):
+    """ Verification solution types. """
+    NO_VERIFICATION_SOLUTION = "NO_VERIFICATION_SOLUTION"
+    INVISCID_VORTEX          = "INVISCID_VORTEX"
+    RINGLEB                  = "RINGLEB"
+    NS_UNIT_QUAD             = "NS_UNIT_QUAD"
+    TAYLOR_GREEN_VORTEX      = "TAYLOR_GREEN_VORTEX"
+    MMS_NS_UNIT_QUAD         = "MMS_NS_UNIT_QUAD"
+    MMS_NS_UNIT_QUAD_WALL_BC = "MMS_NS_UNIT_QUAD_WALL_BC"
+    MMS_NS_TWO_HALF_CIRCLES  = "MMS_NS_TWO_HALF_CIRCLES"
+    MMS_NS_TWO_HALF_SPHERES  = "MMS_NS_TWO_HALF_SPHERES"
+    MMS_INC_EULER            = "MMS_INC_EULER"
+    MMS_INC_NS               = "MMS_INC_NS"
+    INC_TAYLOR_GREEN_VORTEX  = "INC_TAYLOR_GREEN_VORTEX"
+    USER_DEFINED_SOLUTION    = "USER_DEFINED_SOLUTION"
+
+
+class UnitSystem(Enum):
+    """ System of measurements.
+
+    Attributes
+    ----------
+    SI : str
+        International system of units (SI): (meters, kilograms, Kelvins,
+        Newtons = kg m/s^2, Pascals = N/m^2, Density = kg/m^3,
+        Speed = m/s, Equiv. Area = m^2)
+    US : str
+        United States customary units (US): (inches, slug, Rankines,
+        lbf = slug ft/s^2, psf = lbf/ft^2, Density = slug/ft^3,
+        Speed = ft/s, Equiv. Area = ft^2)
+    """
+    SI = "SI"
+    US = "US"
 
 # +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 # EOF

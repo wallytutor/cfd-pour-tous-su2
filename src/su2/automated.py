@@ -16,11 +16,6 @@ from enum import Enum
 # Enumerations
 # ============================================================================
 
-class SystemMeasurements(Enum):
-    """System of measurements"""
-    SI = "SI"  # International System
-    US = "US"  # United States customary units
-
 
 class TimeMarching(Enum):
     """Time marching scheme"""

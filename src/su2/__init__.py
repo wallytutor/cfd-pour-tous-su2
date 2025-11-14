@@ -13,6 +13,8 @@ from .enums import (
     TurbulenceModel,
     ShearStressTransportModel,
     SpalartAllmarasModel,
+    TransitionModel,
+    LmTransitionModelOptions,
     InletType,
     ConvectiveScheme,
     LinearSolver,
@@ -21,6 +23,9 @@ from .enums import (
     NumMethodGrad,
     MgCycle,
     TimeDiscretization,
+    SgsModel,
+    SolutionVerification,
+    UnitSystem,
 )
 
 __all__ += [
@@ -28,6 +33,8 @@ __all__ += [
     "TurbulenceModel",
     "ShearStressTransportModel",
     "SpalartAllmarasModel",
+    "TransitionModel",
+    "LmTransitionModelOptions",
     "InletType",
     "ConvectiveScheme",
     "LinearSolver",
@@ -36,6 +43,9 @@ __all__ += [
     "NumMethodGrad",
     "MgCycle",
     "TimeDiscretization",
+    "SgsModel",
+    "SolutionVerification",
+    "UnitSystem",
 ]
 
 # +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
