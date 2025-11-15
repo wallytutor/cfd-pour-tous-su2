@@ -17,6 +17,7 @@ from majordome.su2 import (
 )
 from majordome.su2 import (
     ProblemDefinition,
+    CompressibleFreeStreamDefinition,
 )
 ```
 
@@ -34,10 +35,25 @@ time_discretization = TimeDiscretization.EULER_IMPLICIT
 ```
 
 ```python
-problem_definition = ProblemDefinition(
+text = ""
+
+defs = ProblemDefinition(
     solver = SolverType.EULER,
 )
-print(problem_definition.to_cfg())
+
+text += defs.to_cfg()
+
+defs = CompressibleFreeStreamDefinition(
+    mach             = 0.5,
+    angle_of_attack  = 0.0,
+    sideslip_angle   = 0.0,
+    pressure         = 101325.0,
+    temperature      = 288.0,
+)
+
+text += defs.to_cfg()
+
+print(text)
 ```
 
 ```python
