@@ -4,10 +4,7 @@
 ```
 
 ```python
-import sys
-sys.path.insert(0, "../../")
-
-from su2 import (
+from majordome.su2 import (
     SolverType,
     InletType,
     ConvectiveScheme,
@@ -18,7 +15,7 @@ from su2 import (
     MgCycle,
     TimeDiscretization
 )
-from su2 import (
+from majordome.su2 import (
     ProblemDefinition,
 )
 ```
