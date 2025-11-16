@@ -21,6 +21,7 @@ from majordome.su2 import (
     CompressibleFreeStreamDefinition,
     ReferenceValues,
     BoundaryConditions,
+    SurfacesIdentification,
     SU2Configuration,
 )
 ```
@@ -68,9 +69,10 @@ conf.boundary_conditions = BoundaryConditions(
     inlet_type    = InletType.TOTAL_CONDITIONS,
 )
 
+conf.surfaces_identification = SurfacesIdentification(
+    marker_plotting   = ["lower_wall"],
+    marker_monitoring = ["upper_wall", "lower_wall"],
+)
+
 print(conf.to_cfg())
-```
-
-```python
-
 ```
