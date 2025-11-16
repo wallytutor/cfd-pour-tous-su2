@@ -2,6 +2,7 @@
 jupyter:
   jupytext:
     cell_metadata_filter: -all
+    formats: md,ipynb
     text_representation:
       extension: .md
       format_name: markdown
