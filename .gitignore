@@ -28,3 +28,6 @@ _*.pdf
 *.vtu
 *.dat
 *.csv
+
+# Generated files
+/src/**/model.cfg
